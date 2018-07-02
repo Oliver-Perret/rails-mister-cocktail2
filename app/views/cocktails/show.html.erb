@@ -1,0 +1,40 @@
+<div class="container">
+  <h1> Details </h1>
+   <h3> <%= @cocktail.name %> </h3>
+
+   <%@cocktail.doses.each do |dose| %>
+     <ul>
+       <li>
+          <%= dose.description %> - <%= dose.ingredient.name %>
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+       </li>
+     </ul>
+   <% end %>
+
+  <% unless @cocktail.reviews.all.count == 0  %>
+    <h3>reviews</h3>
+    <%@cocktail.reviews.each do |review| %>
+      <ul>
+        <li>
+           <%= review.content %>  <%= review.rating %> étoiles
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+
+<br>
+
+  <%= render 'doses/new' %>
+
+<br>
+
+  <%= render 'reviews/new' %>
+
+
+
+<%= link_to "Back to index", cocktails_path  %>
+
+</div>
+

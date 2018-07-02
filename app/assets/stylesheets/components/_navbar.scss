@@ -1,0 +1,17 @@
+
+ #navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  }
+
+#navbar a:hover {
+
+  cursor: pointer;
+
+  }
