@@ -4,8 +4,22 @@ h1,h2,h3,h4{
   font-family: 'Arvo', serif;
 }
 
+h4{
+    font-weight: 400;
+    font-size: 18px;
+}
 
 body{
   font-family: 'Open Sans', sans-serif;
 
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
 }

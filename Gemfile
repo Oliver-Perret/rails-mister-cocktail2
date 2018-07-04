@@ -35,6 +35,10 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails' # Add this line if you use Rails 5.1
 gem 'sprockets-rails'
 gem 'figaro'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'devise'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

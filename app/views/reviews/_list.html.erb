@@ -1,0 +1,18 @@
+
+<% unless @cocktail.reviews.all.count == 0  %>
+   <div id="reviews">
+      <h4>Reviews</h4>
+      <%@cocktail.reviews.each do |review| %>
+        <ul>
+          <li>
+             <%= review.content %>
+             <% review.rating.times do %>
+               <i class="fas fa-star"></i>
+             <% end %>
+          </li>
+        </ul>
+      <% end %>
+   </div>
+<% end %>
+
+

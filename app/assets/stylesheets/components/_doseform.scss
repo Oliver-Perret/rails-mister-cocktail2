@@ -1,0 +1,15 @@
+#dose_form{
+
+  padding: 20px;
+  border: 1px solid rgba(254,95,85,0.3);
+  width: 330px;
+  box-shadow: 2px 2px 2px rgb(234, 234, 234);
+  flex: 0 0 35%;
+  position: sticky;
+  align-self: flex-start;
+  top: 200px;
+
+  h4{
+    text-align: center;
+  }
+}

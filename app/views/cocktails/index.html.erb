@@ -1,17 +1,28 @@
-<div class="container">
-  <h1> List of cocktails </h1>
-  <% @cocktails.each do |cocktail| %>
-  <ul>
 
-    <li> <%= cocktail.name  %> </li>
-    <%= link_to "details", cocktail_path(cocktail.id)  %>
-  </ul>
 
-  <% end %>
-   <%= link_to "Home Page", root_path  %>
-   <%= link_to "Add a cocktail", new_cocktail_path  %>
+  <h1 id="list-big-title" class="text-center"> List of cocktails </h1>
 
-</div>
+   <div class="cards">
+
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12">
+          <%= link_to cocktail_path(cocktail.id) do %>
+              <div class="card"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                       url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+                <div class="card-title"> <h4> <%= cocktail.name  %> </h4></div>
+              </div>
+          <% end %>
+        </div>
+      <% end %>
+
+
+   </div>
+
+
+
+
+
 
 
 
