@@ -31,19 +31,19 @@ class CocktailsController < ApplicationController
   end
 
   def edit
-
+    authorize @cocktail
   end
 
   def update
     authorize @cocktail
-    @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.update
-
+    @cocktail.update(cocktail_params)
     redirect_to cocktails_path
   end
 
   def destroy
-
+    @cocktail.destroy
+    authorize @cocktail
+    redirect_to cocktails_path
   end
 
 private
