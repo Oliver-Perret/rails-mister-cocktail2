@@ -7,27 +7,30 @@
       <% end %>
     </div>
 
-  <% if user_signed_in? %>
 <!-- Right part of navbar -->
     <div id="navbar_right">
       <%= link_to "All cocktails", cocktails_path,  class: "navbar-wagon-item navbar-wagon-link"  %>
-      <%= link_to "Add Cocktail", new_cocktail_path,  class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if policy(Cocktail).create? %>
+        <%= link_to "Add Cocktail", new_cocktail_path,  class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
 
 
     <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+  <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
           <% end %>
+  <% else %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <% end %>
         </div>
       </div>
     </div>
-  <% else %>
-
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
 
-  <% end %>
+
 </div>
 
