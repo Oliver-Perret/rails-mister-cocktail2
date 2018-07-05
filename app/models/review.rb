@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :cocktail
+  belongs_to :user, foreign_key: "user_id"
 
 
   validates :content, presence: true
