@@ -35,5 +35,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
+#home_wrapper > p {
+  margin-bottom: 100px;
+}
