@@ -17,3 +17,5 @@
 
 
 // app/assets/javascripts/application.js
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
